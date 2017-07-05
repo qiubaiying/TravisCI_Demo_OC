@@ -1,3 +1,4 @@
 language: objective-c
-xcode_project: MyNewProject.xcodeproj # path to your xcodeproj folder
-xcode_scheme: MyNewProjectTests
+osx_image: xcode8.3
+xcode_project: TravisCI_Demo_OC.xcodeproj # path to your xcodeproj folder
+xcode_scheme: TravisCI_Demo_OCTests
