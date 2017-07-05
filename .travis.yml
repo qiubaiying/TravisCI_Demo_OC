@@ -1,4 +1,11 @@
 language: objective-c
+os: osx
 osx_image: xcode8.3
-xcode_project: TravisCI_Demo_OC.xcodeproj # path to your xcodeproj folder
-xcode_scheme: TravisCI_Demo_OCTests
+# xcode_project: TravisCI_Demo_OC.xcodeproj # path to your xcodeproj folder
+# xcode_scheme: TravisCI_Demo_OCTests
+script: 
+    set -o pipefail
+      xcodebuild clean test -project TravisCI_Demo_OC.xcodeproj -scheme TravisCI_Demo_OC -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest' | xcpretty
+
+git:
+  submodules: false
