@@ -7,5 +7,5 @@ script:
     set -o pipefail
       xcodebuild clean test -project TravisCI_Demo_OC.xcodeproj -scheme TravisCI_Demo_OC -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t af91bbf9-0ede-4fb4-bf1e-f2ed986b8238
 
