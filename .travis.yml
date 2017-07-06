@@ -8,5 +8,4 @@ script:
       xcodebuild clean test -project TravisCI_Demo_OC.xcodeproj -scheme TravisCI_Demo_OC -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-git:
-  submodules: false
+
