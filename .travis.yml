@@ -4,8 +4,9 @@ osx_image: xcode8.3
 # xcode_project: TravisCI_Demo_OC.xcodeproj # path to your xcodeproj folder
 # xcode_scheme: TravisCI_Demo_OCTests
 script: 
-    set -o pipefail
-      xcodebuild clean test -project TravisCI_Demo_OC.xcodeproj -scheme TravisCI_Demo_OC -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
+    # set -o pipefail
+    #   xcodebuild clean test -project TravisCI_Demo_OC.xcodeproj -scheme TravisCI_Demo_OC -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
+     - xcodebuild -scheme TravisCI_Demo_OC -project TravisCI_Demo_OC.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' build test            
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 git:
